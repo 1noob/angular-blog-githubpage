@@ -1,3 +1,4 @@
+<nz-skeleton *ngIf="!blogs" [nzActive]="true"></nz-skeleton>
 <div *ngIf="blogs" class="main">
   <div *ngFor="let blog of blogs">
     <a class="blog-title-link" routerLink='/article/{{ blog["number"] }}'>

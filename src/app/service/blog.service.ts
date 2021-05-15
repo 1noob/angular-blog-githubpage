@@ -8,6 +8,9 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 // 内存池
 const cache = {};
 let cachedBlogs = [];
+const headers = {
+  'Authorization': 'Basic dG9rZW46Z2hwX3dCaWtKYjVqclhiUkVTUlJ6S0kydjFXRkF6UVJLMTNQVnNvbw=='
+};
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +36,7 @@ export class BlogService {
     if (cache[url]) {
       return of(cache[url]);
     } else {
-      return ajax.getJSON(url).pipe(
+      return ajax.getJSON(url,headers).pipe(
         this.catchErrorPipe,
         map((data: any) => {
           cache[url] = data;
@@ -50,7 +53,7 @@ export class BlogService {
       return of(blog);
     } else {
       const url = `https://api.github.com/repos/${owner}/${repo}/issues/${blogId}`;
-      return ajax.getJSON(url).pipe(
+      return ajax.getJSON(url,headers).pipe(
         this.catchErrorPipe,
         // map(blog => this.decorateBlog(blog)),
       );
@@ -61,7 +64,7 @@ export class BlogService {
     if (blog.comments == 0) {
       return of([]);
     } else {
-      return ajax.getJSON(blog.comments_url).pipe(
+      return ajax.getJSON(blog.comments_url,headers).pipe(
         this.catchErrorPipe
       );
     }

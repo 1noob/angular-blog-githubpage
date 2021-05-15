@@ -1,3 +1,4 @@
+<nz-skeleton *ngIf="!article" [nzActive]="true"></nz-skeleton>
 <div *ngIf="article">
   <h4 class="align-center">{{ article["title"] }}.md</h4>
   <h6 class="created-at">{{  article["created_at"] | date:'yyyy-MM-dd hh:mm:ss' }}</h6>
