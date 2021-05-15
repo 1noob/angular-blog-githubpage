@@ -82,7 +82,8 @@ export class BlogService {
       },
       headers: {
         'Accept': 'text/html',
-        'Content-Type': 'application/json;charset=UTF-8'
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Authorization': 'Basic dG9rZW46Z2hwX3dCaWtKYjVqclhiUkVTUlJ6S0kydjFXRkF6UVJLMTNQVnNvbw=='
       }
     }).pipe(
       this.catchErrorPipe,
