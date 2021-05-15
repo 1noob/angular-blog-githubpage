@@ -4,11 +4,11 @@ import { BlogService } from "../service/blog.service";
 
 @Component({
   selector: 'app-layout',
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.css'],
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.css'],
   providers: [BlogService]
 })
-export class LayoutComponent implements OnInit {
+export class ListComponent implements OnInit {
 
   blogs = null;
 

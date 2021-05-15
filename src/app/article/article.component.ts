@@ -18,8 +18,8 @@ export class ArticleComponent implements OnInit {
   processBlog(blog) {
     if (!blog.markdownRendered) {
       this.blogService.renderMarkdown$(blog.body)
-        .subscribe(d => {
-          blog.body = d;
+        .subscribe(data => {
+          blog.body = data;
           blog.markdownRendered = true;
         });
     }

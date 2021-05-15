@@ -10,7 +10,7 @@ import zh from '@angular/common/locales/zh';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LayoutComponent } from './layout/layout.component';
+import { ListComponent } from './list/list.component';
 import { NgZorroAntdModule } from './ng-zorro-antd.module';
 import { CommonModule } from "@angular/common";
 import { ArticleComponent } from "./article/article.component";
@@ -21,7 +21,7 @@ registerLocaleData(zh);
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
+    ListComponent,
     ArticleComponent,
   ],
   imports: [
