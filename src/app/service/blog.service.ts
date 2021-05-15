@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ajax } from 'rxjs/ajax';
 import { of } from 'rxjs';
-import {map, catchError, tap} from 'rxjs/operators';
+import { map, catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
-import {NzMessageService} from 'ng-zorro-antd/message';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 // 内存池
 const cache = {};
@@ -23,8 +23,8 @@ export class BlogService {
   }
 
   getDefaultOwnerAndRepo() {
-    let owner = environment.github.owner ;
-    let repo = environment.github.repo || `${owner}.github.io`;
+    let owner = '1noob';
+    let repo = '1noob.github.io';
     return {owner, repo};
   }
 

@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from "../../environments/environment";
-import {ajax} from "rxjs/ajax";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { Blog } from "../entity/blog";
-import {BlogService} from "../service/blog.service";
+import { BlogService } from "../service/blog.service";
 
 
 @Component({
