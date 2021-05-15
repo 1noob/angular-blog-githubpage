@@ -49,7 +49,7 @@ export class BlogService {
     if (blog) {
       return of(blog);
     } else {
-      const url = `https://api.github.com/repos/${owner}/${repo}/issues/${blogId}`;
+      const url = `https://api.github.com/repos/1noob/1noob.github.io/issues/${blogId}`;
       return ajax.getJSON(url).pipe(
         this.catchErrorPipe,
         // map(blog => this.decorateBlog(blog)),
