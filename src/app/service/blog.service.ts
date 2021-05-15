@@ -29,13 +29,12 @@ export class BlogService {
   }
 
   getBlogs$(owner, repo) {
-    const url = `https://api.github.com/repos/${owner}/${repo}/issues`;
+    const url = `https://api.github.com/repos/1noob/1noob.github.io/issues`;
     if (cache[url]) {
       return of(cache[url]);
     } else {
       return ajax.getJSON(url).pipe(
         this.catchErrorPipe,
-        // map((data: any) => data.map(blog => this.decorateBlog(blog))),
         map((data: any) => {
           cache[url] = data;
           cachedBlogs = data;
@@ -66,25 +65,6 @@ export class BlogService {
         this.catchErrorPipe
       );
     }
-  }
-
-  decorateBlog(blog) {
-    console.log(blog.body);
-    if (!blog.body) return blog;
-
-    let commentIndex = blog.body.indexOf('-->');
-    let metaStr = blog.body.substring(0, commentIndex);
-
-    metaStr = metaStr.replace(/\n|\r|<!-{2,}/gm, ' ')
-
-    try {
-      blog.meta = JSON.parse(metaStr);
-      blog.body = blog.body.substring(commentIndex + 3);
-    } catch (e) {
-      console.error(e);
-    }
-
-    return blog;
   }
 
   renderMarkdown$(text) {

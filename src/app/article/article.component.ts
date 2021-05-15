@@ -13,19 +13,7 @@ export class ArticleComponent implements OnInit {
 
   article = null;
 
-  constructor(
-    private route: ActivatedRoute,
-    private blogService: BlogService
-  ) {
-    const {owner, repo} = this.blogService.getDefaultOwnerAndRepo();
-
-    this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => this.blogService.getBlog$(owner, repo, params.get('id')))
-    ).subscribe(blog => {
-      this.article = blog;
-      this.processBlog(this.article);
-    });
-  }
+  constructor(private route: ActivatedRoute, private blogService: BlogService) { }
 
   processBlog(blog) {
     if (!blog.markdownRendered) {
@@ -59,6 +47,14 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const {owner, repo} = this.blogService.getDefaultOwnerAndRepo();
+
+    this.route.paramMap.pipe(
+      switchMap((params: ParamMap) => this.blogService.getBlog$(owner, repo, params.get('id')))
+    ).subscribe(blog => {
+      this.article = blog;
+      this.processBlog(this.article);
+    });
   }
 
 }
