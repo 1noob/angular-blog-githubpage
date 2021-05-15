@@ -1,6 +1,6 @@
 <div *ngIf="blogs" class="main">
   <div *ngFor="let blog of blogs">
-    <a class="blog-title-link" routerLink="/article/{{blog.number}}">
+    <a class="blog-title-link" routerLink='/article/{{ blog["number"] }}'>
       <h4>{{ blog["title"] }}.md</h4>
     </a>
     <span class="created-at">{{ blog["created_at"] | date:'yyyy-MM-dd' }}</span>

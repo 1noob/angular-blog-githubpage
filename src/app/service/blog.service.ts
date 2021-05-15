@@ -29,7 +29,7 @@ export class BlogService {
   }
 
   getBlogs$(owner, repo) {
-    const url = `https://api.github.com/repos/1noob/1noob.github.io/issues`;
+    const url = `https://api.github.com/repos/${owner}/${repo}/issues`;
     if (cache[url]) {
       return of(cache[url]);
     } else {
@@ -49,7 +49,7 @@ export class BlogService {
     if (blog) {
       return of(blog);
     } else {
-      const url = `https://api.github.com/repos/1noob/1noob.github.io/issues/${blogId}`;
+      const url = `https://api.github.com/repos/${owner}/${repo}/issues/${blogId}`;
       return ajax.getJSON(url).pipe(
         this.catchErrorPipe,
         // map(blog => this.decorateBlog(blog)),
@@ -66,6 +66,7 @@ export class BlogService {
       );
     }
   }
+
 
   renderMarkdown$(text) {
     return ajax({
