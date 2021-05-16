@@ -1,5 +1,7 @@
 .layout {
+  background: url("../assets/image/starfield-banner.jpg");
   min-height: 100vh;
+  min-width: 448px;
 }
 
 .ant-layout-header{
@@ -8,7 +10,7 @@
 }
 
 nz-header {
-  background: url("../assets/image/starfield-banner.jpg");
+  background-color: transparent;
   width: 100%;
 }
 
@@ -25,8 +27,9 @@ nz-header>h1{
 }
 
 nz-content {
-  background: url("../assets/image/starfield-banner.jpg");
   padding: 0 50px;
+  background-color: transparent;
+  /*max-width: 902px;*/
 }
 
 
@@ -38,7 +41,7 @@ nz-content {
 }
 
 nz-footer{
-  background: url("../assets/image/starfield-banner.jpg");
+  background-color: transparent;
   color: white;
   text-align: center;
 }
