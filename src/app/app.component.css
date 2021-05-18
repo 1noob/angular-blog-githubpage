@@ -1,48 +1,44 @@
 .layout {
   background: url("../assets/image/starfield-banner.jpg");
   min-height: 100vh;
-  min-width: 350px;
 }
 
 .ant-layout-header{
-  height: 84px;
-  line-height: 84px;
-}
-
-nz-header {
+  padding: 0;
+  height: 70px;
+  line-height: 65px;
   background-color: transparent;
-  width: 100%;
 }
 
 nz-header>h1{
-  margin: 0;
+  margin: 0 auto;
+  min-width: 350px;
+  max-width: 902px;
   font-size: 2.25em;
   font-weight: bold;
-  padding: 0 30px;
+  padding: 0 28px;
   color: white;
 }
 
-[nz-menu] {
-  line-height: 64px;
-}
-
 nz-content {
-  padding: 0 50px 0 50px;
+  /*padding: 0 32px 0 32px;*/
   background-color: transparent;
-  /*max-width: 902px;*/
+  height: auto;
 }
 
 
 .inner-content {
+  margin: 0 auto;
   border-radius: 15px;
+  min-width: 350px;
+  min-height: 600px;
+  max-width: 902px;
   background: #fff;
   padding: 16px 32px 16px 32px;
-  min-height: 380px;
 }
 
 nz-footer{
   background-color: transparent;
-  color: white;
   text-align: center;
 }
 

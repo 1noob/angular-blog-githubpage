@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, SimpleChange} from '@angular/core';
+import { fromEvent} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'KcNco\'s Blog';
 
-  changeWidth(): void{
+  constructor(){
 
   }
+
+  // ngOnInit(){
+  //   fromEvent(window, 'resize').subscribe(e => {
+  //     if (window.innerWidth < 500){
+  //
+  //     }
+  //   })
+  // }
+
+
 }
