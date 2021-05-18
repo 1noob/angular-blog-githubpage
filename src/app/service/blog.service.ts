@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { ajax } from 'rxjs/ajax';
 import { of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
-import { environment } from '../../environments/environment';
-import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 // 内存池
 const cache = {};
@@ -12,15 +11,17 @@ const headers = {
   'Authorization': 'Basic dG9rZW46Z2hwX3dCaWtKYjVqclhiUkVTUlJ6S0kydjFXRkF6UVJLMTNQVnNvbw=='
 };
 
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
   private readonly catchErrorPipe = null
 
-  constructor(private nzMessage: NzMessageService) {
+  constructor(private nzService: NzNotificationService) {
     this.catchErrorPipe = catchError(e => {
-      this.nzMessage.error(e.response.message, { nzDuration: 10000 });
+      console.log(e);
       return of(e);
     });
   }

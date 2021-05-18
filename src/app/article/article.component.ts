@@ -11,9 +11,13 @@ import {switchMap} from "rxjs/operators";
 })
 export class ArticleComponent implements OnInit {
 
-  article = null;
+  article;
 
-  constructor(private route: ActivatedRoute, private blogService: BlogService) { }
+  constructor(private route: ActivatedRoute, private blogService: BlogService) {
+    this.article = {
+      "status": 404
+    }
+  }
 
   processBlog(blog) {
     if (!blog.markdownRendered) {
@@ -49,11 +53,14 @@ export class ArticleComponent implements OnInit {
   ngOnInit(): void {
     const {owner, repo} = this.blogService.getDefaultOwnerAndRepo();
 
+
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) => this.blogService.getBlog$(owner, repo, params.get('id')))
     ).subscribe(blog => {
       this.article = blog;
-      this.processBlog(this.article);
+      if (this.article.status != '404'){
+        this.processBlog(this.article);
+      }
     });
   }
 

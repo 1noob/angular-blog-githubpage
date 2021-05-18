@@ -1,5 +1,5 @@
-<nz-skeleton *ngIf="!article" [nzActive]="true" [nzParagraph]="{ rows: 10 }"></nz-skeleton>
-<div *ngIf="article">
+<nz-skeleton *ngIf='!article["markdownRendered"]' [nzActive]="true" [nzParagraph]="{ rows: 10 }"></nz-skeleton>
+<div *ngIf='article["markdownRendered"]'>
   <div class="md-header">
     <h4 class="align-center">{{ article["title"] }}.md</h4>
     <h6 class="created-at">{{  article["created_at"] | date:'yyyy-MM-dd hh:mm:ss' }}</h6>

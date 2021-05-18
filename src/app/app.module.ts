@@ -15,8 +15,18 @@ import { NgZorroAntdModule } from './ng-zorro-antd.module';
 import { CommonModule } from "@angular/common";
 import { ArticleComponent } from "./article/article.component";
 import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NZ_CONFIG, NzConfig} from "ng-zorro-antd/core/config";
 
 registerLocaleData(zh);
+
+const ngZorroConfig: NzConfig = {
+  // 注意组件名称没有 nz 前缀
+  // message: { nzTop: 120 },
+  notification: {
+    // nzTop: 240,
+    nzPauseOnHover: true
+  }
+};
 
 @NgModule({
   declarations: [
@@ -34,7 +44,10 @@ registerLocaleData(zh);
     CommonModule,
     NzSpinModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
+  providers: [
+    { provide: NZ_I18N, useValue: zh_CN },
+    { provide: NZ_CONFIG, useValue: ngZorroConfig }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

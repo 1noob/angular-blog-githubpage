@@ -1,7 +1,7 @@
 .layout {
   background: url("../assets/image/starfield-banner.jpg");
   min-height: 100vh;
-  min-width: 448px;
+  min-width: 350px;
 }
 
 .ant-layout-header{
@@ -27,7 +27,7 @@ nz-header>h1{
 }
 
 nz-content {
-  padding: 0 50px;
+  padding: 0 50px 0 50px;
   background-color: transparent;
   /*max-width: 902px;*/
 }
