@@ -15,7 +15,6 @@ import { NgZorroAntdModule } from './ng-zorro-antd.module';
 import { CommonModule } from "@angular/common";
 import { ArticleComponent } from "./article/article.component";
 import { NzSpinModule } from 'ng-zorro-antd/spin';
-import { HashLocationStrategy , LocationStrategy } from '@angular/common';
 
 registerLocaleData(zh);
 
@@ -35,9 +34,7 @@ registerLocaleData(zh);
     CommonModule,
     NzSpinModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN },
-              { provide: LocationStrategy, useClass: HashLocationStrategy}
-  ],
+  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
