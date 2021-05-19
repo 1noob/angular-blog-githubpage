@@ -52,8 +52,6 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit(): void {
     const {owner, repo} = this.blogService.getDefaultOwnerAndRepo();
-
-
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) => this.blogService.getBlog$(owner, repo, params.get('id')))
     ).subscribe(blog => {
