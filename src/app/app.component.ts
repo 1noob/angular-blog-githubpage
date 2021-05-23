@@ -7,19 +7,13 @@ import { fromEvent} from "rxjs";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'KcNco\'s Blog';
+  title = 'KcNco\'s Note';
 
   constructor(){
 
   }
 
-  // ngOnInit(){
-  //   fromEvent(window, 'resize').subscribe(e => {
-  //     if (window.innerWidth < 500){
-  //
-  //     }
-  //   })
-  // }
+  ngOnInit(){
 
-
+  }
 }
