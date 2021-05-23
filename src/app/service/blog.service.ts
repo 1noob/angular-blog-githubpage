@@ -3,6 +3,7 @@ import { ajax } from 'rxjs/ajax';
 import { of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
+import {formatDate} from "@angular/common";
 
 // 内存池
 const cache = {};
@@ -68,6 +69,16 @@ export class BlogService {
       return ajax.getJSON(blog.comments_url,headers).pipe(
         this.catchErrorPipe
       );
+    }
+  }
+
+  processBlog(blog) {
+    if (!blog.markdownRendered) {
+      this.renderMarkdown$(blog.body)
+        .subscribe(data => {
+          blog.body = data;
+          blog.markdownRendered = true;
+        });
     }
   }
 

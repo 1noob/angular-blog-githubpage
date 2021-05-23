@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {BlogService} from "../service/blog.service";
-import {formatDate} from "@angular/common";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {switchMap} from "rxjs/operators";
 
@@ -12,37 +11,13 @@ import {switchMap} from "rxjs/operators";
 export class ArticleComponent implements OnInit {
 
   article;
+  error_code = [
+    "404", "410"
+  ];
 
   constructor(private route: ActivatedRoute, private blogService: BlogService) {
     this.article = {
       "status": 404
-    }
-  }
-
-  processBlog(blog) {
-    if (!blog.markdownRendered) {
-      this.blogService.renderMarkdown$(blog.body)
-        .subscribe(data => {
-          blog.body = data;
-          blog.markdownRendered = true;
-        });
-    }
-
-    if (!blog.allComments || !blog.allComments.length) {
-      this.blogService.getBlogComments$(blog)
-        .subscribe((comments: Array<any>) => {
-          blog.allComments = comments.map(c => {
-            const createTime = new Date(c.created_at);
-            const updateTime = new Date(c.updated_at);
-
-            c.title = `${c.user.login} commented on ${formatDate(createTime, 'yyyy-MM-dd', 'en-US')}`;
-            if (updateTime.getTime() > createTime.getTime()) {
-              c.title += `, edited on ${formatDate(updateTime, 'yyyy-MM-dd', 'en-US')}`;
-            }
-            return c;
-          });
-
-        });
     }
   }
 
@@ -56,8 +31,8 @@ export class ArticleComponent implements OnInit {
       switchMap((params: ParamMap) => this.blogService.getBlog$(owner, repo, params.get('id')))
     ).subscribe(blog => {
       this.article = blog;
-      if (this.article.status != '404'){
-        this.processBlog(this.article);
+      if (this.article.status == null){
+        this.blogService.processBlog(this.article);
       }
     });
   }

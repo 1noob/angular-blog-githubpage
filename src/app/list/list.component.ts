@@ -12,7 +12,8 @@ export class ListComponent implements OnInit {
 
   blogs = null;
 
-  constructor(private blogService: BlogService) {}
+  constructor(private blogService: BlogService) {
+  }
 
   ngOnInit(): void {
     const {owner, repo} = this.blogService.getDefaultOwnerAndRepo();
