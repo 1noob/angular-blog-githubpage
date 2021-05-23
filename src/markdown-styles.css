@@ -111,6 +111,8 @@ label em.highlight {
   margin-bottom: 16px
 }
 
+
+
 .markdown-body hr {
   height: 4px;
   padding: 0;
@@ -685,4 +687,8 @@ code {
   font-size: 14px;
   color: #999;
   font-weight: normal;
+}
+
+.markdown-body th{
+  width: 100vh;
 }
