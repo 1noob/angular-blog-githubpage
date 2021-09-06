@@ -7,7 +7,7 @@ import { fromEvent} from "rxjs";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'KcNco\'s Note';
+  title = 'Jay\'s Note';
 
   constructor(){
 
