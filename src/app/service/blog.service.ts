@@ -9,7 +9,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 // 内存池
 const cache = {};
 const headers = {
-  'Authorization': 'Basic dG9rZW46Z2hwX2dHalQ5aFRQUFlEVGxETkJYdkQ1aExuaDROOEJpajFYQWdtUQ=='
+  'Authorization': "Basic dG9rZW46Z2hwX2dHalQ5aFRQUFlEVGxETkJYdkQ1aExuaDROOEJpajFYQWdtUQ==",
+  // 'Access-Control-Allow-Origin': '*',
 };
 
 
@@ -53,6 +54,8 @@ export class BlogService {
     return this.http.get(url).pipe(
       this.catchErrorPipe,
       map((data: any) => {
+        if(data['status'] == 0)
+          return null;
         return data['error']['text'];
       })
     );

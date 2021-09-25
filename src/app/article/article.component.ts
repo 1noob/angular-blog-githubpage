@@ -11,7 +11,7 @@ import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 })
 export class ArticleComponent implements OnInit {
 
-  article;
+  article: SafeResourceUrl;
   markUrl: SafeResourceUrl;
 
   constructor(private sanitizer:DomSanitizer, private route: ActivatedRoute, private blogService: BlogService) {}
@@ -26,6 +26,7 @@ export class ArticleComponent implements OnInit {
           .subscribe(
             (data:any) => {
               this.article = this.sanitizer.bypassSecurityTrustHtml(data);
+              console.log(this.article);
             }
           );
       }

@@ -8,7 +8,6 @@
 h4{
   font-size: 14px;
   font-weight: 600;
-  float: left;
   clear:left;
   color: #0000FF;
 }
@@ -16,5 +15,6 @@ h4{
 
 .item{
   padding: 5px 32px 5px 32px;
+  float: left;
 }
 

@@ -1,32 +1,48 @@
 .layout {
-  background: url("../assets/image/bg.gif");
+  /*background: url("../assets/image/bg.gif");*/
+  background-color: white;
   width: 100%;
   min-height: 100%;
   height: 100%;
 }
 
 .ant-layout-header{
-  padding: 0;
+  margin: auto;
+  padding: 20px 0 0 0;
+  min-width: 200px;
   height: 70px;
-  line-height: 65px;
-  background-color: transparent;
+  line-height: 50px;
+  background-color: white;
 }
 
 
 .header{
-  margin: 0 auto;
-  min-width: 350px;
-  max-width: 902px;
-  font-size: 32px;
+  float: left;
+  margin: 0;
+  font-size: 20px;
   font-weight: bold;
-  padding: 0 28px;
-  color: #EDF2F0;
+  padding: 0 30px;
+  color: #000000;
   font-family: 'JetBrainsMono', Helvetica, Arial, sans-serif;
 }
 
+.footer{
+  font-size: 14px;
+  font-weight: bold;
+}
+
 nz-content {
-  background-color: transparent;
+  background-color: white;
   height: 100%;
+}
+
+.ant-layout-content{
+  padding: 20px 0 20px 0;
+  margin: auto;
+}
+
+.ant-layout-content > h1{
+  text-align: center;
 }
 
 
@@ -45,12 +61,13 @@ nz-content {
 }
 
 nz-footer{
-  background-color: transparent;
+  background-color: white;
   text-align: center;
 }
 
 nz-footer>h4{
-  color: #EDF2F0;
+  color: #000000;
+  margin: 0;
 }
 
 
