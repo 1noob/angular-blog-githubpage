@@ -54,8 +54,8 @@ export class BlogService {
     return this.http.get(url).pipe(
       this.catchErrorPipe,
       map((data: any) => {
-        if(data['status'] == 0)
-          return null;
+        if(data['status'] != 200)
+          return false;
         return data['error']['text'];
       })
     );
