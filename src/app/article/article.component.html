@@ -1,8 +1,3 @@
-<nz-skeleton *ngIf='!article["markdownRendered"]' [nzActive]="true" [nzParagraph]="{ rows: 10 }"></nz-skeleton>
-<div *ngIf='article["markdownRendered"]' class="md-header">
-  <h4 class="align-center">{{ article["title"] }}.md</h4>
-  <h6 class="created-at">{{  article["created_at"] | date:'yyyy-MM-dd hh:mm:ss' }}</h6>
-  <br/>
-</div>
-<div *ngIf='article["markdownRendered"]' class="blog-content markdown-body" [innerHtml]="article.body"></div>
+<nz-skeleton class="item" *ngIf='!article' [nzActive]="true" [nzParagraph]="{ rows: 20 }"></nz-skeleton>
+<div *ngIf='article' [innerHTML]="article"></div>
 

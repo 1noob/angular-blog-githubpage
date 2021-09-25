@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from "../service/blog.service";
+import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 
 
 @Component({
@@ -10,9 +11,9 @@ import { BlogService } from "../service/blog.service";
 })
 export class ListComponent implements OnInit {
 
-  blogs = null;
+  blogs:any = null;
 
-  constructor(private blogService: BlogService) {
+  constructor(private blogService: BlogService){
   }
 
   ngOnInit(): void {
@@ -22,7 +23,5 @@ export class ListComponent implements OnInit {
         this.blogs = blogs;
       });
   }
-
-
 
 }

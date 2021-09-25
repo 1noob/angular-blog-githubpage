@@ -36,7 +36,6 @@
             ],
             "styles": [
               "src/theme.less",
-              "src/markdown-styles.css",
               "node_modules/ng-zorro-antd/ng-zorro-antd.css"
             ],
             "scripts": []
@@ -105,7 +104,6 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/markdown-styles.css"
             ],
             "scripts": []
           }

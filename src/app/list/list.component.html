@@ -1,10 +1,11 @@
-<nz-skeleton *ngIf="!blogs" [nzActive]="true" [nzParagraph]="{ rows: 5 }"></nz-skeleton>
+<nz-skeleton class="item" *ngIf="!blogs" [nzActive]="true" [nzParagraph]="{ rows: 5 }"></nz-skeleton>
 <div *ngIf="blogs" class="main">
   <div *ngFor="let blog of blogs" class="item">
-    <a class="blog-title-link" routerLink='/article/{{ blog["number"] }}'>
-      <h4>{{ blog["title"] }}.md</h4>
+    <a class="blog-title-link" routerLink='/article/{{ blog["name"] }}'>
+      <h4>{{ blog["name"] }}</h4>
     </a>
-    <span class="created-at">{{ blog["created_at"] | date:'yyyy-MM-dd' }}</span>
     <br/>
   </div>
 </div>
+
+
