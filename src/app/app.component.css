@@ -19,7 +19,7 @@
   margin: 0;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #000000;
+  color: black;
   font-family: 'JetBrainsMono', Helvetica, Arial, sans-serif;
 }
 
@@ -43,12 +43,22 @@ nz-content {
 .inner-content {
   margin: 0 auto;
   border-radius: 1rem;
-  min-width: 350px;
+  position: relative;
+  z-index: 100;
+  min-width: 450px;
   height: auto;
   max-width: 902px;
   background: white;
   padding: 0;
 }
+
+@media screen and (min-width: 902px) {
+  .inner-content {
+    box-shadow: #a9a9a987 10px 10px 40px 5px;
+  }
+}
+
+
 
 .ant-layout-footer{
   padding: 1rem 0;
@@ -61,7 +71,7 @@ nz-footer{
 }
 
 nz-footer>h4{
-  color: #000000;
+  color: black;
 }
 
 a{
