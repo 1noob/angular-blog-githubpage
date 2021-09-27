@@ -20,7 +20,11 @@ export class ListComponent implements OnInit {
     const {owner, repo} = this.blogService.getDefaultOwnerAndRepo();
     this.blogService.getBlogs$(owner, repo)
       .subscribe(blogs => {
-        this.blogs = blogs;
+        let tmp: Array<Object> = [];
+        blogs.forEach(function (value) {
+          tmp.push(value['name']);
+        });
+        console.log(this.blogs = tmp.sort(((a, b) => a.toString().length - b.toString().length)));
       });
   }
 

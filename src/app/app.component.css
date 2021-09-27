@@ -8,28 +8,22 @@
 
 .ant-layout-header{
   margin: auto;
-  padding: 20px 0 0 0;
   min-width: 200px;
-  height: 70px;
-  line-height: 50px;
+  height: 5rem;
   background-color: white;
 }
 
 
 .header{
-  float: left;
+  line-height: 5rem;
   margin: 0;
-  font-size: 20px;
+  font-size: 1.5rem;
   font-weight: bold;
-  padding: 0 30px;
   color: #000000;
   font-family: 'JetBrainsMono', Helvetica, Arial, sans-serif;
 }
 
-.footer{
-  font-size: 14px;
-  font-weight: bold;
-}
+
 
 nz-content {
   background-color: white;
@@ -37,7 +31,7 @@ nz-content {
 }
 
 .ant-layout-content{
-  padding: 20px 0 20px 0;
+  /*padding: 1rem 1rem;*/
   margin: auto;
 }
 
@@ -48,7 +42,7 @@ nz-content {
 
 .inner-content {
   margin: 0 auto;
-  border-radius: 15px;
+  border-radius: 1rem;
   min-width: 350px;
   height: auto;
   max-width: 902px;
@@ -57,17 +51,32 @@ nz-content {
 }
 
 .ant-layout-footer{
-  padding: 10px 0;
+  padding: 1rem 0;
 }
 
 nz-footer{
   background-color: white;
   text-align: center;
+  margin: auto;
 }
 
 nz-footer>h4{
   color: #000000;
-  margin: 0;
+}
+
+a{
+  color: black;
+}
+
+a:hover{
+  color: #1890ff;
+}
+
+.footer{
+  padding: 0 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  float: left;
 }
 
 
