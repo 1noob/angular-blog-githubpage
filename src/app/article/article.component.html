@@ -1,3 +1,5 @@
-<!--<nz-skeleton class="item" *ngIf='!article' [nzActive]="true" [nzParagraph]="{ rows: 20 }"></nz-skeleton>-->
-<div *ngIf="article" [innerHTML]="article"></div>
-
+<nz-skeleton class="item" *ngIf='!article' [nzActive]="true" [nzParagraph]="{ rows: 20}" (ended)="getDomTest()" ></nz-skeleton>
+<!--<button (click)="getDomTest()" style="width: 100%;">测试DOM</button>-->
+<div #divContent>
+  <div class="article" *ngIf="article" [innerHTML]="article"></div>
+</div>

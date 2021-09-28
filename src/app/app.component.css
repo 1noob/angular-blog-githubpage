@@ -33,6 +33,7 @@ nz-content {
 .ant-layout-content{
   /*padding: 1rem 1rem;*/
   margin: auto;
+  width: 100%;
 }
 
 .ant-layout-content > h1{
