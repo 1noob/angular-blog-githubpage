@@ -6,6 +6,9 @@ import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 import {NONE_TYPE} from "@angular/compiler";
 
 
+
+const cache = {};
+
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -31,7 +34,8 @@ export class ArticleComponent implements OnInit {
     const {owner, repo} = this.blogService.getDefaultOwnerAndRepo();
     this.route.params.subscribe(
       (result: any) => {
-        this.markUrl = this.sanitizer.bypassSecurityTrustResourceUrl(`https://raw.githubusercontent.com/${owner}/${repo}/main/${result.articleName}`);
+        // let url = `https://raw.githubusercontent.com/${owner}/${repo}/main/${result.articleName}`;
+        // this.markUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
         this.blogService.getBlog$(owner, repo, result.articleName)
           .subscribe(
             (data:any) => {
@@ -40,6 +44,7 @@ export class ArticleComponent implements OnInit {
               else
                 this.article = this.sanitizer.bypassSecurityTrustHtml(data);
 
+              // set style
               if(screen.width<500){
                 this.renderer.setStyle(this.greetDiv.nativeElement, 'font-size', '0.7rem');
               }

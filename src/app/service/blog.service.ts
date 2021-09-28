@@ -10,7 +10,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 const cache = {};
 const headers = {
   'Authorization': "Basic dG9rZW46Z2hwX2dHalQ5aFRQUFlEVGxETkJYdkQ1aExuaDROOEJpajFYQWdtUQ==",
-  // 'Access-Control-Allow-Origin': '*',
 };
 
 
@@ -37,6 +36,7 @@ export class BlogService {
   getBlogs$(owner, repo) {
     const url = `https://api.github.com/repos/${owner}/${repo}/contents`;
     if (cache[url]) {
+      console.log('use cache!');
       return of(cache[url]);
     } else {
       return ajax.getJSON(url,headers).pipe(
@@ -51,13 +51,21 @@ export class BlogService {
 
   getBlog$(owner, repo, blogName) {
     const url = `https://raw.githubusercontent.com/${owner}/${repo}/main/${blogName}`;
-    return this.http.get(url).pipe(
-      this.catchErrorPipe,
-      map((data: any) => {
-        if(data['status'] != 200)
-          return false;
-        return data['error']['text'];
-      })
-    );
+    if (cache[url]){
+      console.log('use cache!');
+      return of(cache[url])
+    } else {
+      return this.http.get(url).pipe(
+        this.catchErrorPipe,
+        map((data: any) => {
+          if (data['status'] != 200)
+            return false;
+          else{
+            cache[url] = data['error']['text'];
+            return data['error']['text'];
+          }
+        })
+      );
+    }
   }
 }
