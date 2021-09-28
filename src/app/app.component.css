@@ -46,7 +46,7 @@ nz-content {
   border-radius: 1rem;
   position: relative;
   z-index: 100;
-  min-width: 340px;
+  /*min-width: 340px;*/
   height: auto;
   max-width: 902px;
   background: white;
