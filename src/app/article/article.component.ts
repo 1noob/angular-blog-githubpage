@@ -50,10 +50,9 @@ export class ArticleComponent implements OnInit {
               else{
 
                 this.html = (new DOMParser).parseFromString(data.toString(), 'text/html');
-                this.html.getElementById('write').removeChild(this.html.getElementById('write').firstChild);
 
                 if (screen.width<500){
-                  this.renderer.setStyle(this.html.getElementById('write'),'padding','0.7rem');
+                  this.renderer.setStyle(this.html.getElementById('write'),'padding','0 0.5rem');
                   this.renderer.setStyle(this.html.getElementById('write'),'font-size','0.7rem');
                 }
 
