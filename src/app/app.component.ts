@@ -7,7 +7,7 @@ import { Component, ElementRef, SimpleChange} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = '𝚜𝚘𝚗𝚐𝚓𝚒𝚎\'𝚜 𝚗𝚘𝚝𝚎𝚜';
+  title = '𝕾𝖔𝖓𝖌𝖏𝖎𝖊\'𝖘 𝕹𝖔𝖙𝖊𝖘';
 
 
   constructor(){
