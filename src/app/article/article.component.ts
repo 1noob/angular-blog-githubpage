@@ -2,7 +2,7 @@ import {Component, OnInit, ElementRef, Renderer2, ViewChild} from '@angular/core
 import {BlogService} from "../service/blog.service";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {switchMap} from "rxjs/operators";
-import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
+import {DomSanitizer, SafeResourceUrl, Title} from "@angular/platform-browser";
 import {NONE_TYPE} from "@angular/compiler";
 import {fromEvent, Observable} from 'rxjs';
 
@@ -28,9 +28,9 @@ export class ArticleComponent implements OnInit {
     private sanitizer:DomSanitizer,
     private route: ActivatedRoute,
     private blogService: BlogService,
-    private renderer:Renderer2
-  ) {
+    private renderer:Renderer2,
 
+  ) {
   }
 
 

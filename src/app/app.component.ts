@@ -1,4 +1,5 @@
-import { Component, ElementRef, SimpleChange} from '@angular/core';
+import { Component } from '@angular/core';
+import { Title } from "@angular/platform-browser";
 
 
 @Component({
@@ -7,10 +8,14 @@ import { Component, ElementRef, SimpleChange} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'SONGJIE / NOTE';
+  page_title = 'SONGJIE / NOTE';
+  tab_title = '1noob\'s notes about deeplearning';
 
 
-  constructor(){
+  constructor(public title: Title){
+    if(screen.width<500){
+      this.title.setTitle(this.tab_title);
+    }
   }
 
   ngOnInit(){
