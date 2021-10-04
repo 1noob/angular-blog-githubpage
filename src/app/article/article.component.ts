@@ -42,7 +42,8 @@ export class ArticleComponent implements OnInit {
 
     this.route.params.subscribe(
       (result: any) => {
-        this.blogService.getBlog$(owner, repo, result.articleName)
+        let res_name = result.articleName.replaceAll(' ','-').concat('.html');
+        this.blogService.getBlog$(owner, repo, res_name)
           .subscribe(
             (data:any) => {
               if(!data)

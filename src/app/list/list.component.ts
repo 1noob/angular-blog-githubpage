@@ -22,7 +22,7 @@ export class ListComponent implements OnInit {
       .subscribe(blogs => {
         let tmp: Array<Object> = [];
         blogs.forEach(function (value) {
-          tmp.push(value['name']);
+          tmp.push(value['name'].split('.')[0].replaceAll('-',' '));
         });
         console.log(this.blogs = tmp.sort(((a, b) => a.toString().length - b.toString().length)));
       });
