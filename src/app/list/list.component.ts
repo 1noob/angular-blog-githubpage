@@ -28,4 +28,7 @@ export class ListComponent implements OnInit {
       });
   }
 
+  process_url(url: any){
+    return url.replaceAll(' ','-');
+  }
 }

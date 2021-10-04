@@ -1,8 +1,8 @@
 <!--<nz-skeleton class="item" *ngIf="!blogs" [nzActive]="true" [nzParagraph]="{ rows: 5 }"></nz-skeleton>-->
 <div *ngIf="blogs" class="main">
   <div *ngFor="let blog of blogs" class="item">
-    <a class="blog-title-link" routerLink='/articles/{{ blog}}'>
-      <h4>{{ blog}}</h4>
+    <a class="blog-title-link" routerLink='/articles/{{process_url(blog)}}'>
+      <h4>{{ blog }}</h4>
     </a>
   </div>
 </div>
