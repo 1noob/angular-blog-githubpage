@@ -96,7 +96,7 @@ a{
   text-shadow:
     0 1px 0 #ccc,
 
-    0 2px 4px rgba(0, 0, 0, 1);
+    0 2px 5px rgba(0, 0, 0, 1);
 }
 
 @media screen and (min-width: 500px){
