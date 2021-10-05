@@ -1,5 +1,5 @@
 h4{
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 800;
   clear:left;
   color: #0539f9;
@@ -16,7 +16,7 @@ h4{
 
 @media screen and (min-width: 500px) {
   h4{
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 }
 
