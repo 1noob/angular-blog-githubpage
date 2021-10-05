@@ -44,6 +44,7 @@ export class ArticleComponent implements OnInit {
               else{
 
                 this.html = (new DOMParser).parseFromString(data.toString(), 'text/html');
+                this.renderer.setStyle(this.html.getElementById('write'),'margin','0');
 
                 // 移除自动生成的 href 跳转
 
