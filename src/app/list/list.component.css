@@ -1,8 +1,8 @@
 h4{
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 800;
   clear:left;
-  color: #002FA7;
+  color: #0539f9;
   margin: auto;
 }
 
@@ -12,3 +12,11 @@ h4{
   float: left;
   margin: auto;
 }
+
+
+@media screen and (min-width: 500px) {
+  h4{
+    font-size: 1.5rem;
+  }
+}
+

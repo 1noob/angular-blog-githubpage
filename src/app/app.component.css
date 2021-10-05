@@ -10,7 +10,7 @@
   margin: auto;
   min-width: 200px;
   height: 5rem;
-  background-color: white;
+  background-color: transparent;
 }
 
 
@@ -26,12 +26,11 @@
 
 
 nz-content {
-  background-color: white;
+  background-color: transparent;
   height: 100%;
 }
 
 .ant-layout-content{
-  /*padding: 1rem 1rem;*/
   margin: auto;
   width: 100%;
 }
@@ -46,10 +45,9 @@ nz-content {
   border-radius: 1rem;
   position: relative;
   z-index: 100;
-  /*min-width: 340px;*/
   height: auto;
   max-width: 902px;
-  background: white;
+  background: transparent;
   padding: 0;
 }
 
@@ -66,7 +64,7 @@ nz-content {
 }
 
 nz-footer{
-  background-color: white;
+  background-color: transparent;
   text-align: center;
   margin: auto;
 }
@@ -80,17 +78,17 @@ a{
 }
 
 a:hover{
-  color: #002FA7;
+  color: #0539f9;
 }
 
 .footer{
   padding: 0 0.5rem;
   font-size: 0.8rem;
-  font-weight: bold;
+  font-weight: 900;
   float: left;
 }
 
-@media screen and (min-width: 400px){
+@media screen and (min-width: 500px){
   .footer{
     padding: 0 1rem;
   }

@@ -24,7 +24,7 @@ export class ListComponent implements OnInit {
         blogs.forEach(function (value) {
           tmp.push(value['name'].split('.')[0].replaceAll('-',' '));
         });
-        console.log(this.blogs = tmp.sort(((a, b) => a.toString().length - b.toString().length)));
+        this.blogs = tmp.sort(((a, b) => a.toString().length - b.toString().length));
       });
   }
 

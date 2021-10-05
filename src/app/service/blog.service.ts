@@ -22,7 +22,7 @@ export class BlogService {
 
   constructor(private nzService: NzNotificationService, private http: HttpClient) {
     this.catchErrorPipe = catchError(e => {
-      console.log(e);
+      // console.log(e);
       return of(e);
     });
   }
