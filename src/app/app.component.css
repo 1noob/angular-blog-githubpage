@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Impact;
+  src: url('../assets/Impact.ttf');
+}
+
 .layout {
   background-color: white;
   width: 100%;
@@ -7,23 +12,29 @@
 
 .ant-layout-header{
   margin: auto;
+  padding: 0;
   min-width: 200px;
   height: 5rem;
   background-color: transparent;
+
+  /*垂直居中*/
+  display: flex;
 }
 
 
 .header{
-  line-height: 5rem;
+  line-height: 4rem;
   margin: 0;
-  font-size: 1.8rem;
-  font-weight: 900;
+  font-size: 2rem;
+  font-weight: 500;
   color: #fafafa;
-  font-family: 'JetBrainsMono', Helvetica, Arial, sans-serif;
-  text-shadow:
-    0 1px 0 #afafaf, 0 2px 0 #5f5f5f,
+  /*font-family: 'JetBrainsMono', Helvetica, Arial, sans-serif;*/
+  font-family: Impact, sans-serif;
+  text-shadow: 0 1px 0 #888, 0 2px 3px rgb(0, 0, 0);
+  transform: scale(1,1.25);
 
-    0 3px 4px rgba(0, 0, 0, 1);
+  /*垂直居中*/
+  align-self: center;
 }
 
 
@@ -90,7 +101,7 @@ a{
   }
 
   .header{
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 }
 

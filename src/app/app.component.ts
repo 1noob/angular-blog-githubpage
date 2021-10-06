@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  page_title = 'SONGJIE / NOTE';
+  page_title = 'ZHOUSONGJIE / NOTE';
   tab_title = '1noob\'s notes about deeplearning';
 
 
